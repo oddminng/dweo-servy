@@ -19,7 +19,6 @@ defmodule Servy.HttpServer do
     IO.puts "\n🎧  Listening for connection requests on port #{port}...\n"
 
     accept_loop(listen_socket)
-    :gen_tcp.close(listen_socket)
   end
 
   @doc """
@@ -47,6 +46,7 @@ defmodule Servy.HttpServer do
   """
   def serve(client_socket) do
     IO.puts "#{inspect self()}: Working on it!"
+
     client_socket
     |> read_request
     |> Servy.Handler.handle
