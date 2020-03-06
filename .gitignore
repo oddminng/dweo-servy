@@ -26,3 +26,6 @@ servy-*.tar
 /.vscode
 /.elixir_ls
 /.formatter.exs
+
+# Jetbrains IDE file
+/.idea
